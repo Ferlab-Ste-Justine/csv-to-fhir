@@ -18,7 +18,7 @@ def main():
         rows = load(config['file']['spreadsheetId'], config['file']['credentialFile'], tab['name'], tab.get('range'))
         headers = rows.pop(0)
         for row in rows:
-            definition = {header: row[idx] for idx, header in enumerate(headers)}
+            definition = {header: row[idx] if len(row) >= idx + 1 else None for idx, header in enumerate(headers)}
             definition['resourceType'] = tab['resourceType']
             definition['meta'] = {'profile': [tab['profile']]}
             bundle_entries.append(bundle_entry(parse_row(definition)))
