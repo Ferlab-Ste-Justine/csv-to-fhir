@@ -11,4 +11,9 @@ file:
       resourceType: Organization
 fhir:
   url: 'http://localhost:8080/fhir'
+#  OAuth configuration for fhir client
+#  oauth:
+#    url: http://loclhost:8081/auth/realms/clin/protocol/openid-connect/token
+#    client_id: client
+#    client_secret: secret
 
