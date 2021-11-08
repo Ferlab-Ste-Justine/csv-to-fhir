@@ -1,25 +1,8 @@
-import json
-from spreadsheet import load
-from parse import parse_row
 import yaml
 
-
-def bundle_entry(resource):
-    return {
-        'resource': resource,
-        'request': {
-            'method': 'PUT',
-            'url': f'{resource["resourceType"]}/{resource["id"]}'
-        }
-    }
-
-
-def build_bundle(bundle_entries):
-    return {
-        "resourceType": "Bundle",
-        "type": "transaction",
-        "entry": bundle_entries
-    }
+from fhir import build_bundle, bundle_entry, send_bundle
+from parse import parse_row
+from spreadsheet import load
 
 
 def load_config(f):
@@ -29,20 +12,17 @@ def load_config(f):
 
 def main():
     config = load_config('config.yml')
-    print(config)
     bundle_entries = []
     for t in config['file']['tabs']:
         rows = load(config['file']['spreadsheetId'], config['file']['credentialFile'], t['name'], t.get('range'))
         headers = rows.pop(0)
-
         for row in rows:
             d = {header: row[idx] for idx, header in enumerate(headers)}
             d['resourceType'] = t['resourceType']
             d['meta'] = {'profile': [t['profile']]}
             bundle_entries.append(bundle_entry(parse_row(d)))
-
     bundle = build_bundle(bundle_entries)
-    print(json.dumps(bundle))
+    send_bundle(config['fhir']['url'], bundle)
 
 
 if __name__ == '__main__':
