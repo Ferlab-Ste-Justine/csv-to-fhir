@@ -1,6 +1,7 @@
 import json
 from spreadsheet import load
 from parse import parse_row
+import yaml
 
 
 def bundle_entry(resource):
@@ -21,9 +22,13 @@ def build_bundle(bundle_entries):
     }
 
 
+def load_config(f):
+    with open(f, "r") as stream:
+        return yaml.safe_load(stream)
+
+
 def main():
-    f = open('config.json', )
-    config = json.load(f)
+    config = load_config('config.yml')
     print(config)
     bundle_entries = []
     for t in config['file']['tabs']:
