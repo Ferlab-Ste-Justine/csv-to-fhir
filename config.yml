@@ -12,6 +12,25 @@ file:
     - name: practitioner
       profile: http://hl7.org/fhir/StructureDefinition/Practitioner
       resourceType: Practitioner
+    - name: patient
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-patient
+      resourceType: Patient
+    - name: serviceRequest
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-service-request
+      resourceType: ServiceRequest
+    - name: FMH
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-fmh
+      resourceType: FamilyMemberHistory
+    - name: clinicalImpression
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-clinical-impression
+      resourceType: ClinicalImpression
+    - name: observation
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
+      resourceType: Observation
+      range: A:H
+    - name: group
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-family-group
+      resourceType: Group
 fhir:
   url: 'http://localhost:8080/fhir'
 #  OAuth configuration for fhir client
