@@ -1,7 +1,7 @@
 ---
 file:
   spreadsheetId: 1TgHd9EVVOQie4sPOIsPBut6xOd4x1YW9moEfKOaZwZU
-  credentialFile: credentials.json
+  credentialFile: creds/credentials.json
   tabs:
     - name: practitionerRole
       profile: http://hl7.org/fhir/StructureDefinition/PractitionerRole

@@ -1,4 +1,4 @@
 *.iml
 .idea
 venv
-credentials.json
+creds/credentials.json
