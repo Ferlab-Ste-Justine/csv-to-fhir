@@ -3,7 +3,7 @@ import os
 
 from deepmerge import always_merger
 
-from parse import parse_row
+from app.parse import parse_row
 
 
 def load(f):

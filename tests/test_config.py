@@ -1,6 +1,6 @@
 import os
 
-import config
+from app import config
 
 
 def test_load():

@@ -1,4 +1,4 @@
-from parse import parse_row
+from app.parse import parse_row
 
 
 def test_parse_row():

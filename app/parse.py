@@ -1,17 +1,5 @@
 import re
 
-patient = {'resourceType': 'Patient',
-           'identifier[0].reference': 'ref1',
-           'identifier[0].assigner': 'assigner1',
-           'identifier[1].reference': 'ref2',
-           'identifier[1].assigner': 'assigner2',
-           'extension[0].url': 'http://fhir.cqgc.ferlab.bio/StructureDefinition/family-id',
-           'extension[0].valueReference': 'QA00001',
-           'extension[1].url': 'http://fhir.cqgc.ferlab.bio/StructureDefinition/is-proband',
-           'extension[1].valueBoolean': True,
-           'name.given[0]': 'John', 'name.given[1]': 'Frank', 'name.last': 'Doe', 'name.display.text': 'hello',
-           'name.display.value': 'world'}
-
 
 def parse_indice(key):
     m = re.search(r'(.*)\[(\d)\]', key)
@@ -55,4 +43,3 @@ def parse_row(row):
         key_tree = key.split('.')
         parse_col(key_tree, value, parsed)
     return parsed
-
