@@ -3,10 +3,11 @@ import config
 from fhir import build_bundle, bundle_entry, send_bundle
 from parse import parse_row
 from spreadsheet import load
+import argparse
 
 
-def main():
-    conf = config.load('config.yml')
+def main(file):
+    conf = config.load(file)
     bundle_entries = []
     for tab in conf['file']['tabs']:
         rows = load(conf['file']['spreadsheetId'], conf['file']['credentialFile'], tab['name'], tab.get('range'))
@@ -21,9 +22,11 @@ def main():
     if conf['fhir'].get('oauth'):
         access_token = oauth.get_access_token(conf['fhir']['oauth']['url'], conf['fhir']['oauth']['client_id'],
                                               conf['fhir']['oauth']['client_secret'])
-    print(access_token)
     send_bundle(conf['fhir']['url'], bundle, access_token)
 
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-f', '--file', help='Configuration file')
+    args = parser.parse_args()
+    main(args.file)

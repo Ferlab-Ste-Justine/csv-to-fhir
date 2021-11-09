@@ -23,3 +23,4 @@ urllib3==1.26.7
 pyyaml
 requests
 deepmerge==0.3.0
+pytest
