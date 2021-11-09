@@ -1,4 +1,4 @@
-from app.parse import parse_row
+from app.parse import parse_row, parse_indice
 
 
 def test_parse_row():
@@ -40,3 +40,7 @@ def test_parse_row():
         ]
 
     }
+
+def test_parse_indice():
+    assert parse_indice('example[0]') == ('example', 0)
+    assert parse_indice('example') == (None, None)

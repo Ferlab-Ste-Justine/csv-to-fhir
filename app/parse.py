@@ -2,7 +2,7 @@ import re
 
 
 def parse_indice(key):
-    m = re.search(r'(.*)\[(\d)\]', key)
+    m = re.search(r'(.*)\[(\d)]', key)
     if m:
         return m.group(1), int(m.group(2))
     else:
