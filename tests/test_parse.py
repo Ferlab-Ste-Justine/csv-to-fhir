@@ -13,7 +13,7 @@ def test_parse_row():
                'extension[0].extension[0].url': 'subject',
                'extension[0].extension[0].valueReference.reference': 'QA00001',
                'extension[0].extension[1].url': 'proband',
-               'extension[0].extension[1].valueBoolean': True
+               'extension[0].extension[1].valueBoolean': 'false'
                }
     assert parse_row(patient) == {
         'resourceType': 'Patient',
@@ -34,12 +34,55 @@ def test_parse_row():
                         'url': 'subject',
                         'valueReference': {'reference': 'QA00001'},
                     },
-                    {'url': 'proband', 'valueBoolean': True}
+                    {'url': 'proband', 'valueBoolean': False}
                 ]
             }
         ]
 
     }
+
+
+def test_parse_row_extension():
+    patient = {'extension[0].url': 'http://fhir.cqgc.ferlab.bio/StructureDefinition/is-proband',
+               'extension[0].valueBoolean': 'true',
+               'extension[1].url': 'http://fhir.cqgc.ferlab.bio/StructureDefinition/family',
+               'extension[1].extension[0].url': 'subject',
+               'extension[1].extension[0].valueReference.reference': 'Patient/123'
+               }
+    assert parse_row(patient) == {
+        'extension': [
+            {
+                'url': 'http://fhir.cqgc.ferlab.bio/StructureDefinition/is-proband',
+                'valueBoolean': True
+            },
+            {
+                'url': 'http://fhir.cqgc.ferlab.bio/StructureDefinition/family',
+                'extension': [
+                    {
+                        'url': 'subject',
+                        'valueReference': {'reference': 'Patient/123'}
+                    }
+                ]
+            }
+        ]
+
+    }
+
+
+def test_parse_row_valueAge():
+    patient = {'extension[0].url': 'http://fhir.cqgc.ferlab.bio/StructureDefinition/age',
+               'extension[0].valueAge.value': '1'
+               }
+    assert parse_row(patient) == {
+        'extension': [
+            {
+                'url': 'http://fhir.cqgc.ferlab.bio/StructureDefinition/age',
+                'valueAge': {'value': 1}
+            }
+        ]
+
+    }
+
 
 def test_parse_indice():
     assert parse_indice('example[0]') == ('example', 0)
