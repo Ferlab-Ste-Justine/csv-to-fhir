@@ -1,9 +1,12 @@
+import json
+
 import requests
 
 
 def bundle_entry(resource):
     return {
         'resource': resource,
+        'fullUrl': f'{resource["resourceType"]}/{resource["id"]}',
         'request': {
             'method': 'PUT',
             'url': f'{resource["resourceType"]}/{resource["id"]}'
