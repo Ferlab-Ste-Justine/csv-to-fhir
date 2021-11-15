@@ -24,10 +24,18 @@ file:
     - name: clinicalImpression
       profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-clinical-impression
       resourceType: ClinicalImpression
-    - name: observation
+    - name: observation_CGH
       profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
       resourceType: Observation
-      range: A:H
+    - name: observation_INDIC_INVES
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
+      resourceType: Observation
+    - name: observation_ETH_PHENO
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
+      resourceType: Observation
+    - name: observation_CONS
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
+      resourceType: Observation
     - name: group
       profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-family-group
       resourceType: Group
