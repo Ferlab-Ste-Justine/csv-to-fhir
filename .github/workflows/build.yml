@@ -16,6 +16,6 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
       - name: Install dev deps
-        run: pip install -r dev-requirements.txt
+        run: pip install -r requirements-dev.txt
       - name: Run Test
         run: python -m pytest
