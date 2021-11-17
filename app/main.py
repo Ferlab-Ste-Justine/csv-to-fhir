@@ -21,7 +21,8 @@ def main(file):
     access_token = None
     if conf['fhir'].get('oauth'):
         access_token = oauth.get_access_token(conf['fhir']['oauth']['url'], conf['fhir']['oauth']['client_id'],
-                                              conf['fhir']['oauth']['client_secret'])
+                                              conf['fhir']['oauth']['client_secret'],
+                                              conf['fhir']['oauth'].get('uma_audience', None))
     send_bundle(conf['fhir']['url'], bundle, access_token)
 
 

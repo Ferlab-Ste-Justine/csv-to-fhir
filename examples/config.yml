@@ -46,4 +46,5 @@ fhir:
 #    url: http://loclhost:8081/auth/realms/clin/protocol/openid-connect/token
 #    client_id: client
 #    client_secret: secret
+#    uma_audience: clin-acl
 
