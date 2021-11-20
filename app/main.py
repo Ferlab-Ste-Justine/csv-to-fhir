@@ -7,6 +7,7 @@ import argparse
 
 
 def main(file):
+    print('Import started')
     conf = config.load(file)
     bundle_entries = []
     for tab in conf['file']['tabs']:
@@ -23,8 +24,9 @@ def main(file):
         access_token = oauth.get_access_token(conf['fhir']['oauth']['url'], conf['fhir']['oauth']['client_id'],
                                               conf['fhir']['oauth']['client_secret'],
                                               conf['fhir']['oauth'].get('uma_audience', None))
+    print('Sending bundle')
     send_bundle(conf['fhir']['url'], bundle, access_token)
-
+    print('Import finished')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
