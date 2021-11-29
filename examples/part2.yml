@@ -6,32 +6,30 @@ file:
     - name: patient
       profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-patient
       resourceType: Patient
-      range: A1:X3
     - name: serviceRequest
-      range: A1:U3
       profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-service-request
       resourceType: ServiceRequest
-#    - name: FMH
-#      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-fmh
-#      resourceType: FamilyMemberHistory
-#    - name: clinicalImpression
-#      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-clinical-impression
-#      resourceType: ClinicalImpression
-#    - name: observation_CGH
-#      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
-#      resourceType: Observation
-#    - name: observation_INDIC_INVES
-#      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
-#      resourceType: Observation
-#    - name: observation_ETH_PHENO
-#      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
-#      resourceType: Observation
-#    - name: observation_CONS
-#      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
-#      resourceType: Observation
-#    - name: group
-#      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-family-group
-#      resourceType: Group
+    - name: FMH
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-fmh
+      resourceType: FamilyMemberHistory
+    - name: clinicalImpression
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-clinical-impression
+      resourceType: ClinicalImpression
+    - name: observation_CGH
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
+      resourceType: Observation
+    - name: observation_INDIC_INVES
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
+      resourceType: Observation
+    - name: observation_ETH_PHENO
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
+      resourceType: Observation
+    - name: observation_CONS
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
+      resourceType: Observation
+    - name: group
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-family-group
+      resourceType: Group
 fhir:
   url: 'http://localhost:8080/fhir'
 #  OAuth configuration for fhir client
