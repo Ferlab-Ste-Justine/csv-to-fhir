@@ -18,6 +18,9 @@ file:
     - name: patient
       profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-patient
       resourceType: Patient
+    - name: group
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-family-group
+      resourceType: Group
 fhir:
   url: 'http://localhost:8080/fhir'
 #  OAuth configuration for fhir client
