@@ -3,9 +3,6 @@ file:
   spreadsheetId: 1TgHd9EVVOQie4sPOIsPBut6xOd4x1YW9moEfKOaZwZU
   credentialFile: creds/credentials.json
   tabs:
-    - name: patient
-      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-patient
-      resourceType: Patient
     - name: serviceRequest
       profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-service-request
       resourceType: ServiceRequest
