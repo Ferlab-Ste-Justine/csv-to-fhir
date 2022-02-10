@@ -15,6 +15,9 @@ file:
     - name: practitioner
       profile: http://hl7.org/fhir/StructureDefinition/Practitioner
       resourceType: Practitioner
+    - name: patient
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-patient
+      resourceType: Patient
 fhir:
   url: 'http://localhost:8080/fhir'
 #  OAuth configuration for fhir client
