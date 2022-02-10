@@ -24,9 +24,6 @@ file:
     - name: observation_CONS
       profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
       resourceType: Observation
-    - name: group
-      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-family-group
-      resourceType: Group
 fhir:
   url: 'http://localhost:8080/fhir'
 #  OAuth configuration for fhir client
