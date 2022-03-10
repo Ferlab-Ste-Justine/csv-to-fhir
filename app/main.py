@@ -10,11 +10,19 @@ def main(files):
     for file in files:
         print(f'Import {file} started')
         conf = config.load(file)
+
         file_params = """
         File Parameters:
         \tKeycloak Url: %(keycloak_url)
+        \tKeycloak Client ID: %(client_id)
+        \tFhir Url: %(fhir_url)
         \tSpreadsheet ID: %(spreadsheet_id)
-        """ % { "keycloak_url": conf['fhir']['oauth']['url'], "spreadsheet_id": conf['file']['spreadsheetId'] }
+        """ % { 
+            "keycloak_url": conf['fhir']['oauth']['url'],
+            "keycloak_client_id": conf['fhir']['oauth']['client_id'],
+            "fhir_url": conf['fhir']['url'],
+            "spreadsheet_id": conf['file']['spreadsheetId'],
+        }
         print(file_params)
         bundle_entries = []
         for tab in conf['file']['tabs']:
