@@ -24,8 +24,8 @@ file:
     - name: observation_CONS
       profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
       resourceType: Observation
-#fhir:
-#  url: 'http://localhost:8080/fhir'
+fhir:
+  url: 'http://localhost:8080/fhir'
 #  OAuth configuration for fhir client
 #  oauth:
 #    url: http://loclhost:8081/auth/realms/clin/protocol/openid-connect/token
