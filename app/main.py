@@ -14,7 +14,7 @@ def main(files):
         File Parameters:
         \tKeycloak Url: %(keycloak_url)
         \tSpreadsheet ID: %(spreadsheet_id)
-        """ % { "keycloak_url": conf['fhir']['oauth']['url'], "spreadsheet_id": conf['file']['spreadsheetId'], "file": file }
+        """ % { "keycloak_url": conf['fhir']['oauth']['url'], "spreadsheet_id": conf['file']['spreadsheetId'] }
         print(file_params)
         bundle_entries = []
         for tab in conf['file']['tabs']:
