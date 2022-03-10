@@ -1,0 +1,23 @@
+---
+file:
+  spreadsheetId: 1TgHd9EVVOQie4sPOIsPBut6xOd4x1YW9moEfKOaZwZU
+  credentialFile: creds/credentials.json
+  tabs:
+    - name: practitionerRole
+      profile: http://hl7.org/fhir/StructureDefinition/PractitionerRole
+      resourceType: PractitionerRole
+    - name: affiliation
+      profile: http://hl7.org/fhir/StructureDefinition/OrganizationAffiliation
+      resourceType: OrganizationAffiliation
+    - name: organisation
+      profile: http://hl7.org/fhir/StructureDefinition/Organization
+      resourceType: Organization
+    - name: practitioner
+      profile: http://hl7.org/fhir/StructureDefinition/Practitioner
+      resourceType: Practitioner
+    - name: patient
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-patient
+      resourceType: Patient
+    - name: group
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-family-group
+      resourceType: Group

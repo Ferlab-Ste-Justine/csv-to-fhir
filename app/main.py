@@ -10,6 +10,12 @@ def main(files):
     for file in files:
         print(f'Import {file} started')
         conf = config.load(file)
+        file_params = """
+        File Parameters:
+        \tKeycloak Url: %(keycloak_url)
+        \tSpreadsheet ID: %(spreadsheet_id)
+        """ % { "keycloak_url": conf['fhir']['oauth']['url'], "spreadsheet_id": conf['file']['spreadsheetId'] }
+        print(file_params)
         bundle_entries = []
         for tab in conf['file']['tabs']:
             rows = load(conf['file']['spreadsheetId'], conf['file']['credentialFile'], tab['name'], tab.get('range'))

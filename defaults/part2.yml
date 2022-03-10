@@ -1,0 +1,26 @@
+---
+file:
+  spreadsheetId: 1TgHd9EVVOQie4sPOIsPBut6xOd4x1YW9moEfKOaZwZU
+  credentialFile: creds/credentials.json
+  tabs:
+    - name: serviceRequest
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-service-request
+      resourceType: ServiceRequest
+    - name: FMH
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-fmh
+      resourceType: FamilyMemberHistory
+    - name: clinicalImpression
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-clinical-impression
+      resourceType: ClinicalImpression
+    - name: observation_CGH
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
+      resourceType: Observation
+    - name: observation_INDIC_INVES
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
+      resourceType: Observation
+    - name: observation_ETH_PHENO
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
+      resourceType: Observation
+    - name: observation_CONS
+      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
+      resourceType: Observation
