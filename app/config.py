@@ -22,7 +22,7 @@ def _check_conf_path(conf, path_keys):
             print("Config error: %s does not exist" % ".".join(path_keys))
             exit(1)
 
-def _check(conf):
+def check(conf):
     for conf_path in _CONFIG_PATHS_CHECKLIST:
         _check_conf_path(conf, conf_path)
 
@@ -32,5 +32,4 @@ def load(f):
         from_environ = {k.removeprefix('config.'): v for k, v in os.environ.items() if k.startswith('config.')}
         from_environ = parse_row(from_environ)
         conf = always_merger.merge(from_file, from_environ)
-        _check(conf)
         return conf
