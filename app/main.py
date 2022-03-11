@@ -14,7 +14,7 @@ def main(files):
         file_params = """
         File Parameters:
         \tKeycloak Url: %(keycloak_url)
-        \tKeycloak Client ID: %(client_id)
+        \tKeycloak Client ID: %(keycloak_client_id)
         \tFhir Url: %(fhir_url)
         \tSpreadsheet ID: %(spreadsheet_id)
         """ % {
