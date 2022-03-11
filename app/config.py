@@ -44,7 +44,7 @@ def dictionarize_env(env_vars, separator, transform):
 
 def load(f):
     env_separator = '__'
-    config_start = 'config' + env_separator
+    config_start = 'CONFIG' + env_separator
     with open(f, "r") as stream:
         from_file = yaml.safe_load(stream)
         from_environ = {k.removeprefix(config_start): v for k, v in os.environ.items() if k.startswith(config_start)}
