@@ -1,8 +1,5 @@
 import json
 
-import requests
-
-
 def bundle_entry(resource):
     return {
         'resource': resource,
@@ -22,11 +19,11 @@ def build_bundle(bundle_entries):
     }
 
 
-def send_bundle(fhir_url, bundle, access_token=None):
+def send_bundle(request_session, fhir_url, bundle, access_token=None):
     headers = {}
     if access_token:
         headers['Authorization'] = f'Bearer {access_token}'
-    r = requests.post(fhir_url, json=bundle, headers=headers)
+    r = request_session.post(fhir_url, json=bundle, headers=headers)
     if r.status_code > 201:
         print(json.dumps(r.json(), indent=True))
     r.raise_for_status()
