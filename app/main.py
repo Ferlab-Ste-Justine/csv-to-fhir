@@ -13,10 +13,10 @@ def main(files):
         config.check(conf)
         file_params = """
         File Parameters:
-        \tKeycloak Url: %(keycloak_url)
-        \tKeycloak Client ID: %(keycloak_client_id)
-        \tFhir Url: %(fhir_url)
-        \tSpreadsheet ID: %(spreadsheet_id)
+        \tKeycloak Url: %(keycloak_url)s
+        \tKeycloak Client ID: %(keycloak_client_id)s
+        \tFhir Url: %(fhir_url)s
+        \tSpreadsheet ID: %(spreadsheet_id)s
         """ % {
             "keycloak_url": conf['fhir']['oauth']['url'],
             "keycloak_client_id": conf['fhir']['oauth']['client_id'],
