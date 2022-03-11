@@ -1,0 +1,1 @@
+docker run --rm --entrypoint="" -v $(pwd):/opt -w /opt python:3 sh -c "pip install -r requirements.txt && pip install pylint && pylint app/*.py"
