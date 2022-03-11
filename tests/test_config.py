@@ -5,8 +5,8 @@ from app import config
 
 
 def test_load():
-    os.environ['config.fhir.auth.client_id'] = 'myclientid'
-    os.environ['config.fhir.auth.client_secret'] = 'myclientsecret'
+    os.environ['CONFIG__FHIR__AUTH__CLIENT_ID'] = 'myclientid'
+    os.environ['CONFIG__FHIR__AUTH__CLIENT_SECRET'] = 'myclientsecret'
     current_path = pathlib.Path(__file__).parent.resolve()
     assert config.load(f'{current_path}/test_config.yml') == {
         'fhir': {
