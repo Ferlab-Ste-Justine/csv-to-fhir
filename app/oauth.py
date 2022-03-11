@@ -1,8 +1,5 @@
-import requests
-
-
-def get_access_token(url, client_id, client_secret, uma_audience=None):
-    response_access_token = requests.post(
+def get_access_token(request_session, url, client_id, client_secret, uma_audience=None):
+    response_access_token = request_session.post(
         url,
         data={'grant_type': 'client_credentials', 'client_id': client_id, 'client_secret': client_secret}
     )
@@ -10,7 +7,7 @@ def get_access_token(url, client_id, client_secret, uma_audience=None):
     if not uma_audience:
         return response_access_token.json()["access_token"]
     else:
-        response = requests.post(
+        response = request_session.post(
             url,
             headers={'Authorization': f"Bearer {response_access_token.json()['access_token']}"},
             data={'grant_type': 'urn:ietf:params:oauth:grant-type:uma-ticket',
