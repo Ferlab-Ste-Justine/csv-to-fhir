@@ -28,9 +28,9 @@ def check(conf):
 
 def dictionarize_env(env_vars, separator, transform):
     result = {}
-    for key, val in env_vars:
+    for key, val in env_vars.items():
         fields = key.split(separator)
-        fields = map(transform, fields)
+        fields = [transform(field) for field in fields]
         current_dic = result
         for idx, field in enumerate(fields):
             if idx == (len(fields) - 1):
