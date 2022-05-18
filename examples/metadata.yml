@@ -1,0 +1,21 @@
+---
+file:
+  spreadsheetId: 1fBZ2-a8sa4zlWD0Vp_nXdfTGJEkBjZfdCU29p01QitA
+  credentialFile: creds/credentials.json
+  tabs:
+    - name: Patient
+    - name: Person
+    - name: Obs_codeabableConcept
+    - name: observation_INDIC_INVES
+    - name: SR_analysis
+    - name: SR_sequencing
+    - name: Lab_additionnal
+#    - name: observation_ETH_PHENO
+#      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
+#      resourceType: Observation
+#    - name: observation_CONS
+#      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-observation
+#      resourceType: Observation
+#    - name: group
+#      profile: http://fhir.cqgc.ferlab.bio/StructureDefinition/cqgc-family-group
+#      resourceType: Group

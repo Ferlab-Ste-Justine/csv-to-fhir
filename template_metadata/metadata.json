@@ -1,0 +1,23 @@
+{
+  "experiment": {
+    "platform": "Illumina NovaSeq",
+    "sequencerId": "A00516",
+    "runName": "201106_A00516_0169_AHFM3HDSXY",
+    "runDate": "2020-11-06",
+    "runAlias": "A00516_0169",
+    "flowcellId": "AHFM3HDSXY",
+    "isPairedEnd": true,
+    "fragmentSize": 100,
+    "experimentalStrategy": "WXS",
+    "captureKit": "RocheKapaHyperExome",
+    "baitDefinition": "KAPA_HyperExome_hg38_combined_targets"
+  },
+  "workflow": {
+    "name": "Dragen",
+    "version": "3.8.4",
+    "genomeBuild": "GRCh38"
+  },
+  "submissionSchema": "CQGC_Germline",
+  "analyses": $analyses
+
+}

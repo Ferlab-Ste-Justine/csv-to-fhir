@@ -2,3 +2,4 @@
 .idea
 venv
 creds/credentials.json
+tmp
