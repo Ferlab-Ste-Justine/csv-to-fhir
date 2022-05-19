@@ -12,3 +12,6 @@ file:
     - name: Practitioner
       profile: http://hl7.org/fhir/StructureDefinition/Practitioner
       resourceType: Practitioner
+    - name: affiliation
+      profile: http://hl7.org/fhir/StructureDefinition/OrganizationAffiliation
+      resourceType: OrganizationAffiliation
