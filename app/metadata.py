@@ -65,7 +65,7 @@ def main(file, output):
                 'designFamily': l['designFamily'],
                 'status': translateStatus(diseases_status_by_patient[pid]),
                 'ramq': person_by_patient[pid]['ramq'],
-                'mrn': mrn_ep_by_patient[pid]['ep']
+                'mrn': mrn_ep_by_patient[pid]['mrn']
             },
             'ldm': f'LDM-{ep}',
             'ldmSampleId': l['ldmSampleId'],
@@ -78,7 +78,7 @@ def main(file, output):
             'panelCode': panel_code_by_patient[pid],
             'files': {
                 'cram': f'{aliquot_id}.cram',
-                'crai': f'{aliquot_id}.crai',
+                'crai': f'{aliquot_id}.cram.crai',
                 'snv_vcf': f'{aliquot_id}.hard-filtered.gvcf.gz',
                 'snv_tbi': f'{aliquot_id}.hard-filtered.gvcf.gz.tbi',
                 'cnv_vcf': f'{aliquot_id}.cnv.vcf.gz',
