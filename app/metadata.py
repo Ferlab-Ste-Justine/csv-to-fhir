@@ -83,7 +83,7 @@ def main(file, output):
                 'snv_tbi': f'{aliquot_id}.hard-filtered.gvcf.gz.tbi',
                 'cnv_vcf': f'{aliquot_id}.cnv.vcf.gz',
                 'cnv_tbi': f'{aliquot_id}.cnv.vcf.gz.tbi',
-                'qc': f'{aliquot_id}.QC.tgz'
+                'supplement': f'{aliquot_id}.QC.tgz'
             }
 
 
