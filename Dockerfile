@@ -10,4 +10,4 @@ COPY /app ./app
 COPY defaults/nanuq.yml .
 
 ENTRYPOINT [ "python3", "/app/app/main.py"]
-CMD ["-f", "nanuq.yml"]
+#CMD ["-f", "nanuq.yml"]
