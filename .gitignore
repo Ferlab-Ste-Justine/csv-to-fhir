@@ -3,3 +3,6 @@
 venv
 creds/credentials.json
 tmp
+clin_organizations.tf
+clin_practitioners.tf
+*.pyc

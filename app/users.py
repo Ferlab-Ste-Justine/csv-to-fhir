@@ -12,14 +12,29 @@ def main(file, password, output):
     practioners = load_tab(conf, 'practitioner')
     practioners_roles = load_tab(conf, 'practitionerRole')
 
-    kc_roles = load_tab(conf, 'roles')
+    #kc_roles = load_tab(conf, 'roles')
     practioners_email = {}
+    pr_kc_roles = {}
 
     for pr in practioners_roles:
         id = pr['practitioner']['reference'].replace('Practitioner/', '')
         if id not in practioners_email.keys():
             practioners_email[id] = pr['telecom'][1]['value']
-
+        role = pr['code'][0]['coding'][0]['code']
+        if role == 'doctor':
+            role = 'clin_prescriber'
+        elif role == '15941008':
+            role = 'clin_genetician'
+        elif role == '405277009':
+            role = 'clin_prescriber'
+        else:
+            raise ValueError('No mapping for code[0].coding[0].code: ' + role)
+        sanitizedRole = 'keycloak_role.' + role + '.id'
+        if id not in pr_kc_roles.keys():
+            pr_kc_roles[id] = [sanitizedRole]
+        elif sanitizedRole not in pr_kc_roles[id]:
+            pr_kc_roles[id].append(sanitizedRole)
+    '''
     pr_kc_roles = {}
     for r in kc_roles:
         roles = [f'keycloak_role.{v}.id' for v in r['roles'].split(',')]
@@ -27,7 +42,7 @@ def main(file, password, output):
             pr_kc_roles[r['id']] = roles
         else:
             pr_kc_roles[r['id']] += roles
-
+    '''
     # print(pr_kc_roles)
     with open("templates_hcl/user_template.hcl", "r") as f:
         user_template = f.read()
@@ -39,7 +54,7 @@ def main(file, password, output):
         user = user.replace("$username", p['id'].lower())
         user = user.replace("$password", password)
         user = user.replace("$practitioner_id", p['id'])
-        user = user.replace("$email", practioners_email[p['id']])
+        user = user.replace("$email", practioners_email[p['id']].lower())   # keycloak doesn't like upper case in email
         user = user.replace("$first_name", p['name'][0]['given'][0])
         user = user.replace("$last_name", p['name'][0]['family'])
         user_roles = ['data.keycloak_role.manage_account.id', 'data.keycloak_role.view_profile.id']
