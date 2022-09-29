@@ -1,0 +1,17 @@
+---
+file:
+  spreadsheetId: 1TOKKSpFifQUkzBMnIBEhideWmrYuHryOiijCoX9ng_g
+  credentialFile: creds/credentials.json
+  tabs:
+    - name: PractitionerRole
+      profile: http://hl7.org/fhir/StructureDefinition/PractitionerRole
+      resourceType: PractitionerRole
+    - name: Organisation
+      profile: http://hl7.org/fhir/StructureDefinition/Organization
+      resourceType: Organization
+    - name: Practitioner
+      profile: http://hl7.org/fhir/StructureDefinition/Practitioner
+      resourceType: Practitioner
+    - name: affiliation
+      profile: http://hl7.org/fhir/StructureDefinition/OrganizationAffiliation
+      resourceType: OrganizationAffiliation
